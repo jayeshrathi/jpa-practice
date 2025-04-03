@@ -1,11 +1,11 @@
 package com.example.jpa_practice.service;
 
-import com.example.jpa_practice.dto.StudentDTO;
-import com.example.jpa_practice.repository.StudentRepositoryInterface;
+import com.example.jpa_practice.entity.StudentDTO;
+import com.example.jpa_practice.repository.mySql.StudentRepositoryInterface;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,10 +14,13 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StudentSaveService {
 
-    private final StudentRepositoryInterface studentRepository;
+
+    private final  StudentRepositoryInterface studentRepository;
 
 
+    @Transactional
     public StudentDTO save(StudentDTO studentDTO) {
+        System.out.println("logging save");
             return studentRepository.save(studentDTO);
     }
 

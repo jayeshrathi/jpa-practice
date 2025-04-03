@@ -1,4 +1,4 @@
-package com.example.jpa_practice.dto;
+package com.example.jpa_practice.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

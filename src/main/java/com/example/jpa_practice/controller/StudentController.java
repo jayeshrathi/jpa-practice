@@ -1,11 +1,10 @@
 package com.example.jpa_practice.controller;
 
 
-import com.example.jpa_practice.dto.StudentDTO;
+import com.example.jpa_practice.entity.StudentDTO;
 import com.example.jpa_practice.service.StudentSaveService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

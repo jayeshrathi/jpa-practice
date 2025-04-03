@@ -1,7 +1,7 @@
-package com.example.jpa_practice.repository;
+package com.example.jpa_practice.repository.mySql;
 
 
-import com.example.jpa_practice.dto.StudentDTO;
+import com.example.jpa_practice.entity.StudentDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
