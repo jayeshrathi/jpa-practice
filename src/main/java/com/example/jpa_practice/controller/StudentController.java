@@ -1,7 +1,7 @@
 package com.example.jpa_practice.controller;
 
 
-import com.example.jpa_practice.entity.StudentDTO;
+import com.example.jpa_practice.entity.StudentEntity;
 import com.example.jpa_practice.service.StudentSaveService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,23 +18,23 @@ public class StudentController {
     private final StudentSaveService studentSaveService;
 
     @PostMapping("/save")
-    public StudentDTO saveStudent(
-            @RequestBody StudentDTO studentDTO){
-        return studentSaveService.save(studentDTO);
+    public StudentEntity saveStudent(
+            @RequestBody StudentEntity studentEntity){
+        return studentSaveService.save(studentEntity);
     }
     @GetMapping("/studentDetails/{id}")
-    public StudentDTO saveStudent(
+    public StudentEntity saveStudent(
             @PathVariable(name = "id") int studentId ){
         return studentSaveService.get(studentId);
     }
 
     @PutMapping("/update")
-    public StudentDTO updateStudent(@RequestBody StudentDTO studentDTO){
-        return studentSaveService.update(studentDTO);
+    public StudentEntity updateStudent(@RequestBody StudentEntity studentEntity){
+        return studentSaveService.update(studentEntity);
     }
 
     @GetMapping("/list")
-    public ResponseEntity<List<StudentDTO>> studentList(
+    public ResponseEntity<List<StudentEntity>> studentList(
             @RequestParam(required = false) String name){
         return ResponseEntity.ok().body(studentSaveService.listOfStudents(name));
     }

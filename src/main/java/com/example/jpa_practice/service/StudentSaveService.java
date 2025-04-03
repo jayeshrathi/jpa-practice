@@ -1,9 +1,8 @@
 package com.example.jpa_practice.service;
 
-import com.example.jpa_practice.entity.StudentDTO;
+import com.example.jpa_practice.entity.StudentEntity;
 import com.example.jpa_practice.repository.mySql.StudentRepositoryInterface;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,32 +18,32 @@ public class StudentSaveService {
 
 
     @Transactional
-    public StudentDTO save(StudentDTO studentDTO) {
+    public StudentEntity save(StudentEntity studentEntity) {
         System.out.println("logging save");
-            return studentRepository.save(studentDTO);
+            return studentRepository.save(studentEntity);
     }
 
-    public StudentDTO get(long studentId) {
+    public StudentEntity get(long studentId) {
         return studentRepository.findById(studentId).get();
     }
 
-    public StudentDTO update(StudentDTO studentDTO) {
+    public StudentEntity update(StudentEntity studentEntity) {
 
-        return studentRepository.findById(studentDTO.getStudentIdCard())
+        return studentRepository.findById(studentEntity.getStudentIdCard())
                 .map(existingUser -> {
-                    StudentDTO studentDTO1 = studentRepository.save(studentDTO);
-                    return studentDTO1;
+                    StudentEntity studentEntity1 = studentRepository.save(studentEntity);
+                    return studentEntity1;
                 })
                 .orElseGet(() -> null);
     }
 
-    public List<StudentDTO> listOfStudents(String name) {
-        List<StudentDTO> studentDTO ;
+    public List<StudentEntity> listOfStudents(String name) {
+        List<StudentEntity> studentEntity;
         if (name==null){
-            studentDTO= studentRepository.findAll();
+            studentEntity = studentRepository.findAll();
         }
-        else studentDTO= studentRepository.findByName( name);
+        else studentEntity = studentRepository.findByName( name);
 
-        return studentDTO;
+        return studentEntity;
     }
 }
