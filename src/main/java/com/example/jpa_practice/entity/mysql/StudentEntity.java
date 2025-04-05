@@ -20,8 +20,14 @@ public class StudentEntity {
     private Integer rollNumber;
     private String schoolName;
 
-//    private SchoolEntity school;
+//JoinColumn is compulsory in case SchoolEntity contains the combined  primary key
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumns({
+            @JoinColumn(name= "school_schoolName",referencedColumnName = "schoolName"),
+            @JoinColumn(name = "school_address",referencedColumnName = "address")})
+    private SchoolEntity school;
 
+//  If join column annotation not given it chooses primary key  of StudentDescription Table as  referencedColumnName and  name as fieldName_id(studentDescription_id)
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "table_column_name_inside_student_table",referencedColumnName = "studentUniqueNumber")
     private StudentDescription studentDescription;
