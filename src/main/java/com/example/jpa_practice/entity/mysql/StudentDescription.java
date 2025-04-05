@@ -1,10 +1,9 @@
 package com.example.jpa_practice.entity.mysql;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -18,5 +17,9 @@ public class StudentDescription {
     public String studentHeight;
     public String studentWeight;
 
+    //    when working with mapped by use JsonManageReference JsonBackReference or DTO or JsonIgnore OR @JsonIdentityInfo to avoid recusive response
+    @JsonBackReference
+    @OneToOne(mappedBy = "studentDescription")
+    public StudentEntity student;
 
 }
