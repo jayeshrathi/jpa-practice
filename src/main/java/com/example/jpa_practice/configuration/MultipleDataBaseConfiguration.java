@@ -43,7 +43,10 @@ public class MultipleDataBaseConfiguration {
                 .dataSource(mysqlDatabase)
                 .packages("com.example.jpa_practice.entity.mysql")
                 .persistenceUnit("mysqlPersistenceUnit")
-                .properties(Map.of("hibernate.dialect", "org.hibernate.dialect.MySQLDialect"))
+                .properties(Map.of("hibernate.dialect", "org.hibernate.dialect.MySQLDialect"
+                        ,"hibernate.hbm2ddl.auto","update"
+                        ,"hibernate.show_sql", true
+                ))
                 .build();
     }
 

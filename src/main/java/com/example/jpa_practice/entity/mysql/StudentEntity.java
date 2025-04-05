@@ -19,5 +19,10 @@ public class StudentEntity {
     private String name;
     private Integer rollNumber;
     private String schoolName;
-//    private SchoolDTO school;
+
+//    private SchoolEntity school;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "table_column_name_inside_student_table",referencedColumnName = "studentUniqueNumber")
+    private StudentDescription studentDescription;
 }
