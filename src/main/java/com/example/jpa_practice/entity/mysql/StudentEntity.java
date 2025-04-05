@@ -1,4 +1,4 @@
-package com.example.jpa_practice.entity;
+package com.example.jpa_practice.entity.mysql;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

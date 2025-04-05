@@ -1,6 +1,6 @@
 package com.example.jpa_practice.service;
 
-import com.example.jpa_practice.entity.StudentEntity;
+import com.example.jpa_practice.entity.mysql.StudentEntity;
 import com.example.jpa_practice.repository.mySql.StudentRepositoryInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

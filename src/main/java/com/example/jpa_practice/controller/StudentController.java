@@ -1,7 +1,7 @@
 package com.example.jpa_practice.controller;
 
 
-import com.example.jpa_practice.entity.StudentEntity;
+import com.example.jpa_practice.entity.mysql.StudentEntity;
 import com.example.jpa_practice.service.StudentSaveService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

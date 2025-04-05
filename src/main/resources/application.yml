@@ -8,11 +8,11 @@ spring:
       username: root
       password: Test@456
       driver-class-name: com.mysql.cj.jdbc.Driver
-    postgresSql:
-      url: jdbc:postgresSql://localhost:5432/mydb
+    postgresql:
+      jdbc-url: jdbc:postgresql://localhost:5432/mydb
       username: postgres
       password: Test@456
-      driver-class-name: org.postgresSql.Driver
+      driver-class-name: org.postgresql.Driver
 
   jpa:
     mysql:
